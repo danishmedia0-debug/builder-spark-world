@@ -22,23 +22,23 @@ const statusConfig = {
   approved: {
     bg: "bg-success-50",
     text: "text-success-600",
-    dot: "bg-success-600"
+    dot: "bg-success-600",
   },
   pending: {
-    bg: "bg-warning-50", 
+    bg: "bg-warning-50",
     text: "text-warning-500",
-    dot: "bg-warning-500"
+    dot: "bg-warning-500",
   },
   "service-initiated": {
     bg: "bg-brand-50",
-    text: "text-brand-500", 
-    dot: "bg-brand-500"
+    text: "text-brand-500",
+    dot: "bg-brand-500",
   },
   rejected: {
     bg: "bg-error-50",
     text: "text-error-600",
-    dot: "bg-error-600"
-  }
+    dot: "bg-error-600",
+  },
 };
 
 const mockOrders: Order[] = [
@@ -50,47 +50,47 @@ const mockOrders: Order[] = [
     barcode: "O049",
     dateOfBirth: "12-17-1999",
     ssn: "6658",
-    applicationSubmitted: "2025-09-02 14:16:33"
+    applicationSubmitted: "2025-09-02 14:16:33",
   },
   {
-    id: "2", 
+    id: "2",
     name: "John Doe",
     status: { type: "pending", label: "Pending" },
     enrollment: "ESQU10248",
     barcode: "O049",
     dateOfBirth: "12-17-1999",
     ssn: "6658",
-    applicationSubmitted: "2025-09-02 14:16:33"
+    applicationSubmitted: "2025-09-02 14:16:33",
   },
   {
     id: "3",
-    name: "John Doe", 
+    name: "John Doe",
     status: { type: "service-initiated", label: "Service Initiated" },
     enrollment: "ESQU10248",
     barcode: "O049",
     dateOfBirth: "12-17-1999",
     ssn: "6658",
-    applicationSubmitted: "2025-09-02 14:16:33"
+    applicationSubmitted: "2025-09-02 14:16:33",
   },
   {
     id: "4",
     name: "John Doe",
     status: { type: "service-initiated", label: "Service Initiated" },
-    enrollment: "ESQU10248", 
+    enrollment: "ESQU10248",
     barcode: "O049",
     dateOfBirth: "12-17-1999",
     ssn: "6658",
-    applicationSubmitted: "2025-09-02 14:16:33"
+    applicationSubmitted: "2025-09-02 14:16:33",
   },
   {
     id: "5",
     name: "John Doe",
     status: { type: "service-initiated", label: "Service Initiated" },
     enrollment: "ESQU10248",
-    barcode: "O049", 
+    barcode: "O049",
     dateOfBirth: "12-17-1999",
     ssn: "6658",
-    applicationSubmitted: "2025-09-02 14:16:33"
+    applicationSubmitted: "2025-09-02 14:16:33",
   },
   {
     id: "6",
@@ -98,9 +98,9 @@ const mockOrders: Order[] = [
     status: { type: "pending", label: "Pending" },
     enrollment: "ESQU10248",
     barcode: "O049",
-    dateOfBirth: "12-17-1999", 
+    dateOfBirth: "12-17-1999",
     ssn: "6658",
-    applicationSubmitted: "2025-09-02 14:16:33"
+    applicationSubmitted: "2025-09-02 14:16:33",
   },
   {
     id: "7",
@@ -110,7 +110,7 @@ const mockOrders: Order[] = [
     barcode: "O049",
     dateOfBirth: "12-17-1999",
     ssn: "6658",
-    applicationSubmitted: "2025-09-02 14:16:33"
+    applicationSubmitted: "2025-09-02 14:16:33",
   },
   {
     id: "8",
@@ -119,8 +119,8 @@ const mockOrders: Order[] = [
     enrollment: "ESQU10248",
     barcode: "O049",
     dateOfBirth: "12-17-1999",
-    ssn: "6658", 
-    applicationSubmitted: "2025-09-02 14:16:33"
+    ssn: "6658",
+    applicationSubmitted: "2025-09-02 14:16:33",
   },
   {
     id: "9",
@@ -130,7 +130,7 @@ const mockOrders: Order[] = [
     barcode: "O049",
     dateOfBirth: "12-17-1999",
     ssn: "6658",
-    applicationSubmitted: "2025-09-02 14:16:33"
+    applicationSubmitted: "2025-09-02 14:16:33",
   },
   {
     id: "10",
@@ -140,8 +140,8 @@ const mockOrders: Order[] = [
     barcode: "O049",
     dateOfBirth: "12-17-1999",
     ssn: "6658",
-    applicationSubmitted: "2025-09-02 14:16:33"
-  }
+    applicationSubmitted: "2025-09-02 14:16:33",
+  },
 ];
 
 export default function Tracking() {
@@ -151,7 +151,9 @@ export default function Tracking() {
     <div className="space-y-6">
       {/* Header Section */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-        <h2 className="text-lg font-semibold text-text-primary">Track Your Orders</h2>
+        <h2 className="text-lg font-semibold text-text-primary">
+          Track Your Orders
+        </h2>
 
         {/* Date Filter Button */}
         <button className="flex items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white px-3.5 py-2.5 text-sm font-semibold text-text-secondary shadow-sm hover:bg-gray-50 sm:w-auto w-full">
@@ -170,10 +172,12 @@ export default function Tracking() {
               "flex items-center gap-2 px-3 lg:px-4 py-2 text-sm font-semibold whitespace-nowrap",
               activeFilter === "all"
                 ? "bg-brand-500 text-white"
-                : "bg-white text-text-secondary border-r border-gray-300 hover:bg-gray-50"
+                : "bg-white text-text-secondary border-r border-gray-300 hover:bg-gray-50",
             )}
           >
-            {activeFilter === "all" && <div className="h-2.5 w-2.5 rounded-full bg-white" />}
+            {activeFilter === "all" && (
+              <div className="h-2.5 w-2.5 rounded-full bg-white" />
+            )}
             All (295)
           </button>
           <button
@@ -182,7 +186,7 @@ export default function Tracking() {
               "flex items-center gap-2 px-3 lg:px-4 py-2 text-sm font-semibold border-r border-gray-300 whitespace-nowrap",
               activeFilter === "pending"
                 ? "bg-brand-500 text-white"
-                : "bg-white text-text-secondary hover:bg-gray-50"
+                : "bg-white text-text-secondary hover:bg-gray-50",
             )}
           >
             Pending
@@ -193,7 +197,7 @@ export default function Tracking() {
               "flex items-center gap-2 px-3 lg:px-4 py-2 text-sm font-semibold border-r border-gray-300 whitespace-nowrap",
               activeFilter === "approved"
                 ? "bg-brand-500 text-white"
-                : "bg-white text-text-secondary hover:bg-gray-50"
+                : "bg-white text-text-secondary hover:bg-gray-50",
             )}
           >
             Approved
@@ -204,7 +208,7 @@ export default function Tracking() {
               "flex items-center gap-2 px-3 lg:px-4 py-2 text-sm font-semibold border-r border-gray-300 whitespace-nowrap",
               activeFilter === "rejected"
                 ? "bg-brand-500 text-white"
-                : "bg-white text-text-secondary hover:bg-gray-50"
+                : "bg-white text-text-secondary hover:bg-gray-50",
             )}
           >
             Rejected
@@ -215,7 +219,7 @@ export default function Tracking() {
               "flex items-center gap-2 px-3 lg:px-4 py-2 text-sm font-semibold whitespace-nowrap",
               activeFilter === "service-initiated"
                 ? "bg-brand-500 text-white"
-                : "bg-white text-text-secondary hover:bg-gray-50"
+                : "bg-white text-text-secondary hover:bg-gray-50",
             )}
           >
             Service Initiated
@@ -245,15 +249,19 @@ export default function Tracking() {
               <h3 className="text-lg font-semibold text-text-primary">
                 {order.name}
               </h3>
-              <span className={cn(
-                "flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium",
-                statusConfig[order.status.type].bg,
-                statusConfig[order.status.type].text
-              )}>
-                <div className={cn(
-                  "h-2 w-2 rounded-full",
-                  statusConfig[order.status.type].dot
-                )} />
+              <span
+                className={cn(
+                  "flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium",
+                  statusConfig[order.status.type].bg,
+                  statusConfig[order.status.type].text,
+                )}
+              >
+                <div
+                  className={cn(
+                    "h-2 w-2 rounded-full",
+                    statusConfig[order.status.type].dot,
+                  )}
+                />
                 {order.status.label}
               </span>
             </div>
@@ -263,28 +271,42 @@ export default function Tracking() {
               {/* Mobile: 2x3 Grid, Desktop: Horizontal */}
               <div className="grid grid-cols-2 lg:flex lg:items-center gap-4 lg:gap-10">
                 <div className="flex flex-col">
-                  <span className="text-sm text-gray-400 line-clamp-1">Enrollment</span>
-                  <span className="text-sm text-text-primary">{order.enrollment}</span>
+                  <span className="text-sm text-gray-400 line-clamp-1">
+                    Enrollment
+                  </span>
+                  <span className="text-sm text-text-primary">
+                    {order.enrollment}
+                  </span>
                 </div>
 
                 <div className="hidden lg:block w-px h-9 bg-gray-300" />
 
                 <div className="flex flex-col">
-                  <span className="text-sm text-gray-400 line-clamp-1">Barcode</span>
-                  <span className="text-sm text-text-primary">{order.barcode}</span>
+                  <span className="text-sm text-gray-400 line-clamp-1">
+                    Barcode
+                  </span>
+                  <span className="text-sm text-text-primary">
+                    {order.barcode}
+                  </span>
                 </div>
 
                 <div className="hidden lg:block w-px h-9 bg-gray-300" />
 
                 <div className="flex flex-col">
-                  <span className="text-sm text-gray-400 line-clamp-1">Date of Birth</span>
-                  <span className="text-sm text-text-primary">{order.dateOfBirth}</span>
+                  <span className="text-sm text-gray-400 line-clamp-1">
+                    Date of Birth
+                  </span>
+                  <span className="text-sm text-text-primary">
+                    {order.dateOfBirth}
+                  </span>
                 </div>
 
                 <div className="hidden lg:block w-px h-9 bg-gray-300" />
 
                 <div className="flex flex-col">
-                  <span className="text-sm text-gray-400 line-clamp-1">SSN</span>
+                  <span className="text-sm text-gray-400 line-clamp-1">
+                    SSN
+                  </span>
                   <span className="text-sm text-text-primary">{order.ssn}</span>
                 </div>
               </div>
@@ -292,8 +314,12 @@ export default function Tracking() {
               <div className="hidden lg:block w-px h-9 bg-gray-300" />
 
               <div className="flex flex-col lg:min-w-0">
-                <span className="text-sm text-gray-400 line-clamp-1">Application Submitted</span>
-                <span className="text-sm text-text-primary break-all lg:break-normal">{order.applicationSubmitted}</span>
+                <span className="text-sm text-gray-400 line-clamp-1">
+                  Application Submitted
+                </span>
+                <span className="text-sm text-text-primary break-all lg:break-normal">
+                  {order.applicationSubmitted}
+                </span>
               </div>
             </div>
           </div>
@@ -302,7 +328,9 @@ export default function Tracking() {
 
       {/* Pagination */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between border-t border-gray-300 pt-3 gap-3">
-        <span className="text-sm font-medium text-text-secondary text-center sm:text-left">Page 1 of 100</span>
+        <span className="text-sm font-medium text-text-secondary text-center sm:text-left">
+          Page 1 of 100
+        </span>
 
         <div className="flex items-center justify-center gap-3">
           <button className="rounded-lg px-3 py-2 text-sm font-semibold text-gray-600 hover:bg-gray-100 min-w-0">

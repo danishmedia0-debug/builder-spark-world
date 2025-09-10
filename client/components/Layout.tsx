@@ -20,11 +20,15 @@ export default function Layout({ children }: LayoutProps) {
       )}
 
       {/* Sidebar */}
-      <div className={cn(
-        "fixed inset-y-0 left-0 z-50 w-64 bg-white border-r border-gray-300 transform transition-transform duration-300 ease-in-out",
-        "lg:translate-x-0",
-        isMobileMenuOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
-      )}>
+      <div
+        className={cn(
+          "fixed inset-y-0 left-0 z-50 w-64 bg-white border-r border-gray-300 transform transition-transform duration-300 ease-in-out",
+          "lg:translate-x-0",
+          isMobileMenuOpen
+            ? "translate-x-0"
+            : "-translate-x-full lg:translate-x-0",
+        )}
+      >
         {/* Mobile Close Button */}
         <button
           onClick={() => setIsMobileMenuOpen(false)}
@@ -52,7 +56,7 @@ export default function Layout({ children }: LayoutProps) {
               href="#"
               className={cn(
                 "flex items-center gap-3 rounded-lg px-4 py-2 text-base font-medium",
-                "text-text-primary hover:bg-sidebar-accent"
+                "text-text-primary hover:bg-sidebar-accent",
               )}
             >
               <Activity className="h-6 w-6" />
@@ -62,7 +66,7 @@ export default function Layout({ children }: LayoutProps) {
               href="/"
               className={cn(
                 "flex items-center gap-3 rounded-lg px-4 py-2 text-base font-medium",
-                "bg-brand-50 border border-brand-500 text-brand-500"
+                "bg-brand-50 border border-brand-500 text-brand-500",
               )}
             >
               <Clock className="h-6 w-6 fill-current" />
@@ -84,7 +88,9 @@ export default function Layout({ children }: LayoutProps) {
             <Menu className="h-6 w-6" />
           </button>
 
-          <h1 className="text-xl lg:text-2xl font-bold text-text-primary">Tracking</h1>
+          <h1 className="text-xl lg:text-2xl font-bold text-text-primary">
+            Tracking
+          </h1>
 
           <div className="flex items-center gap-2 lg:gap-3">
             {/* Notification Bell */}
@@ -103,9 +109,7 @@ export default function Layout({ children }: LayoutProps) {
         </header>
 
         {/* Page Content */}
-        <main className="p-4 lg:p-6">
-          {children}
-        </main>
+        <main className="p-4 lg:p-6">{children}</main>
       </div>
     </div>
   );
