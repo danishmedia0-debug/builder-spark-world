@@ -223,7 +223,7 @@ export default function Tracking() {
         </div>
 
         {/* Search Bar */}
-        <div className="flex items-center gap-2.5 rounded-xl border border-gray-300/50 bg-white px-4 py-2.5 lg:w-91 w-full">
+        <div className="flex items-center gap-2.5 rounded-xl border border-gray-300/50 bg-white px-4 py-2.5 lg:w-96 w-full">
           <SearchIcon className="h-5 w-5 text-gray-400 flex-shrink-0" />
           <input
             type="text"
