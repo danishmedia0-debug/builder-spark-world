@@ -150,24 +150,24 @@ export default function Tracking() {
   return (
     <div className="space-y-6">
       {/* Header Section */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <h2 className="text-lg font-semibold text-text-primary">Track Your Orders</h2>
-        
+
         {/* Date Filter Button */}
-        <button className="flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-3.5 py-2.5 text-sm font-semibold text-text-secondary shadow-sm hover:bg-gray-50">
+        <button className="flex items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white px-3.5 py-2.5 text-sm font-semibold text-text-secondary shadow-sm hover:bg-gray-50 sm:w-auto w-full">
           <CalendarIcon className="h-5 w-5" />
           Date Filter
         </button>
       </div>
 
       {/* Filters and Search */}
-      <div className="flex items-center justify-between gap-60">
+      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 lg:gap-16">
         {/* Filter Tabs */}
-        <div className="flex rounded-lg border border-gray-300 bg-white shadow-sm">
+        <div className="flex flex-wrap lg:flex-nowrap rounded-lg border border-gray-300 bg-white shadow-sm overflow-hidden">
           <button
             onClick={() => setActiveFilter("all")}
             className={cn(
-              "flex items-center gap-2 px-4 py-2 text-sm font-semibold first:rounded-l-lg last:rounded-r-lg",
+              "flex items-center gap-2 px-3 lg:px-4 py-2 text-sm font-semibold whitespace-nowrap",
               activeFilter === "all"
                 ? "bg-brand-500 text-white"
                 : "bg-white text-text-secondary border-r border-gray-300 hover:bg-gray-50"
@@ -179,7 +179,7 @@ export default function Tracking() {
           <button
             onClick={() => setActiveFilter("pending")}
             className={cn(
-              "flex items-center gap-2 px-4 py-2 text-sm font-semibold border-r border-gray-300",
+              "flex items-center gap-2 px-3 lg:px-4 py-2 text-sm font-semibold border-r border-gray-300 whitespace-nowrap",
               activeFilter === "pending"
                 ? "bg-brand-500 text-white"
                 : "bg-white text-text-secondary hover:bg-gray-50"
@@ -190,7 +190,7 @@ export default function Tracking() {
           <button
             onClick={() => setActiveFilter("approved")}
             className={cn(
-              "flex items-center gap-2 px-4 py-2 text-sm font-semibold border-r border-gray-300",
+              "flex items-center gap-2 px-3 lg:px-4 py-2 text-sm font-semibold border-r border-gray-300 whitespace-nowrap",
               activeFilter === "approved"
                 ? "bg-brand-500 text-white"
                 : "bg-white text-text-secondary hover:bg-gray-50"
@@ -201,7 +201,7 @@ export default function Tracking() {
           <button
             onClick={() => setActiveFilter("rejected")}
             className={cn(
-              "flex items-center gap-2 px-4 py-2 text-sm font-semibold border-r border-gray-300",
+              "flex items-center gap-2 px-3 lg:px-4 py-2 text-sm font-semibold border-r border-gray-300 whitespace-nowrap",
               activeFilter === "rejected"
                 ? "bg-brand-500 text-white"
                 : "bg-white text-text-secondary hover:bg-gray-50"
@@ -212,7 +212,7 @@ export default function Tracking() {
           <button
             onClick={() => setActiveFilter("service-initiated")}
             className={cn(
-              "flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-r-lg",
+              "flex items-center gap-2 px-3 lg:px-4 py-2 text-sm font-semibold whitespace-nowrap",
               activeFilter === "service-initiated"
                 ? "bg-brand-500 text-white"
                 : "bg-white text-text-secondary hover:bg-gray-50"
@@ -223,12 +223,12 @@ export default function Tracking() {
         </div>
 
         {/* Search Bar */}
-        <div className="flex items-center gap-2.5 rounded-xl border border-gray-300/50 bg-white px-4 py-2.5 w-91">
-          <SearchIcon className="h-5 w-5 text-gray-400" />
+        <div className="flex items-center gap-2.5 rounded-xl border border-gray-300/50 bg-white px-4 py-2.5 lg:w-91 w-full">
+          <SearchIcon className="h-5 w-5 text-gray-400 flex-shrink-0" />
           <input
             type="text"
             placeholder="Search by name or DOB (MM-DD-YYYY)"
-            className="flex-1 text-sm text-text-secondary placeholder:text-gray-400 border-0 outline-none"
+            className="flex-1 text-sm text-text-secondary placeholder:text-gray-400 border-0 outline-none min-w-0"
           />
         </div>
       </div>
