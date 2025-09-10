@@ -236,63 +236,64 @@ export default function Tracking() {
       {/* Orders List */}
       <div className="space-y-2.5">
         {mockOrders.map((order) => (
-          <div 
+          <div
             key={order.id}
-            className="flex items-center justify-between rounded-xl border border-black/5 bg-white p-4 shadow-sm"
+            className="flex flex-col lg:flex-row lg:items-center lg:justify-between rounded-xl border border-black/5 bg-white p-4 shadow-sm gap-4"
           >
-            <div className="flex items-center gap-5">
-              <div className="flex flex-col justify-center gap-0.5">
-                <div className="flex items-center gap-2.5">
-                  <h3 className="text-lg font-semibold text-text-primary">
-                    {order.name}
-                  </h3>
-                  <span className={cn(
-                    "flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium",
-                    statusConfig[order.status.type].bg,
-                    statusConfig[order.status.type].text
-                  )}>
-                    <div className={cn(
-                      "h-2 w-2 rounded-full",
-                      statusConfig[order.status.type].dot
-                    )} />
-                    {order.status.label}
-                  </span>
-                </div>
-              </div>
+            {/* Name and Status */}
+            <div className="flex items-center gap-2.5">
+              <h3 className="text-lg font-semibold text-text-primary">
+                {order.name}
+              </h3>
+              <span className={cn(
+                "flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium",
+                statusConfig[order.status.type].bg,
+                statusConfig[order.status.type].text
+              )}>
+                <div className={cn(
+                  "h-2 w-2 rounded-full",
+                  statusConfig[order.status.type].dot
+                )} />
+                {order.status.label}
+              </span>
             </div>
 
-            <div className="flex items-center gap-10">
-              <div className="flex flex-col">
-                <span className="text-sm text-gray-400 line-clamp-1">Enrollment</span>
-                <span className="text-sm text-text-primary">{order.enrollment}</span>
+            {/* Order Details */}
+            <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-10">
+              {/* Mobile: 2x3 Grid, Desktop: Horizontal */}
+              <div className="grid grid-cols-2 lg:flex lg:items-center gap-4 lg:gap-10">
+                <div className="flex flex-col">
+                  <span className="text-sm text-gray-400 line-clamp-1">Enrollment</span>
+                  <span className="text-sm text-text-primary">{order.enrollment}</span>
+                </div>
+
+                <div className="hidden lg:block w-px h-9 bg-gray-300" />
+
+                <div className="flex flex-col">
+                  <span className="text-sm text-gray-400 line-clamp-1">Barcode</span>
+                  <span className="text-sm text-text-primary">{order.barcode}</span>
+                </div>
+
+                <div className="hidden lg:block w-px h-9 bg-gray-300" />
+
+                <div className="flex flex-col">
+                  <span className="text-sm text-gray-400 line-clamp-1">Date of Birth</span>
+                  <span className="text-sm text-text-primary">{order.dateOfBirth}</span>
+                </div>
+
+                <div className="hidden lg:block w-px h-9 bg-gray-300" />
+
+                <div className="flex flex-col">
+                  <span className="text-sm text-gray-400 line-clamp-1">SSN</span>
+                  <span className="text-sm text-text-primary">{order.ssn}</span>
+                </div>
               </div>
-              
-              <div className="w-px h-9 bg-gray-300" />
-              
-              <div className="flex flex-col">
-                <span className="text-sm text-gray-400 line-clamp-1">Barcode</span>
-                <span className="text-sm text-text-primary">{order.barcode}</span>
-              </div>
-              
-              <div className="w-px h-9 bg-gray-300" />
-              
-              <div className="flex flex-col">
-                <span className="text-sm text-gray-400 line-clamp-1">Date of Birth</span>
-                <span className="text-sm text-text-primary">{order.dateOfBirth}</span>
-              </div>
-              
-              <div className="w-px h-9 bg-gray-300" />
-              
-              <div className="flex flex-col">
-                <span className="text-sm text-gray-400 line-clamp-1">SSN</span>
-                <span className="text-sm text-text-primary">{order.ssn}</span>
-              </div>
-              
-              <div className="w-px h-9 bg-gray-300" />
-              
-              <div className="flex flex-col">
+
+              <div className="hidden lg:block w-px h-9 bg-gray-300" />
+
+              <div className="flex flex-col lg:min-w-0">
                 <span className="text-sm text-gray-400 line-clamp-1">Application Submitted</span>
-                <span className="text-sm text-text-primary">{order.applicationSubmitted}</span>
+                <span className="text-sm text-text-primary break-all lg:break-normal">{order.applicationSubmitted}</span>
               </div>
             </div>
           </div>
