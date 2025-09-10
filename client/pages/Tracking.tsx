@@ -301,14 +301,14 @@ export default function Tracking() {
       </div>
 
       {/* Pagination */}
-      <div className="flex items-center justify-between border-t border-gray-300 pt-3">
-        <span className="text-sm font-medium text-text-secondary">Page 1 of 100</span>
-        
-        <div className="flex items-center gap-3">
-          <button className="rounded-lg px-3 py-2 text-sm font-semibold text-gray-600 hover:bg-gray-100">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between border-t border-gray-300 pt-3 gap-3">
+        <span className="text-sm font-medium text-text-secondary text-center sm:text-left">Page 1 of 100</span>
+
+        <div className="flex items-center justify-center gap-3">
+          <button className="rounded-lg px-3 py-2 text-sm font-semibold text-gray-600 hover:bg-gray-100 min-w-0">
             Previous
           </button>
-          <button className="rounded-lg px-3 py-2 text-sm font-semibold text-text-primary hover:bg-gray-100">
+          <button className="rounded-lg px-3 py-2 text-sm font-semibold text-text-primary hover:bg-gray-100 min-w-0">
             Next
           </button>
         </div>
